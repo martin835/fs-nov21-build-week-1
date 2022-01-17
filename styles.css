@@ -17,6 +17,10 @@ body {
     background: linear-gradient(180deg, rgba(78,1,1,0.83984375) 0%, rgba(45,45,45,1) 24%, rgba(18,18,18,1) 27%);
     background-attachment: fixed;
 }
+/*Ali's classes for main section*/
+
+
+
 .h1-main{
     color: var(--white-1);
     font-size: 2rem;
@@ -78,3 +82,87 @@ body {
     color: var(--white-2);
     font-size: 12px;
 }
+/*Ali's classes for main section end*/
+
+    
+
+/* Gbemi's classes for Navbar*/
+.navStyle{
+background-color: var(--black-3);
+color: var(--white-1);
+border-radius: 20px;
+}
+
+/*Martin's classes for sidebar*/
+.sidebar-bg {
+    background-color: var(--black-1);
+    color: var(--white-2);
+    height: calc(100vh - 24px); 
+    white-space: nowrap;
+    overflow-y: auto;   
+}
+
+.sidebar-logo {
+    color: var(--white-1);
+    font-size: 2rem;
+}
+
+.sidebar-logo > span {
+    vertical-align: middle;
+}
+
+.sidebar-logo-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.sidebar-top div {
+    margin-top: 0.5rem;
+
+}
+
+.sidebar-top > div > span:last-of-type {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+}
+.sidebar-divider {
+    height: 1rem;
+}
+
+.sidebar-top img {
+    height: 18px;
+}
+
+.sidebar-line-divider {    
+    border-bottom: 1px solid var(--white-2);
+    opacity: 0.3;
+}
+
+.sidebar-bottom {
+    font-size: 0.8rem;
+    /* position: relative; */
+
+       
+}
+
+.sidebar-bottom > div > div  {  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    margin-top: 1rem;   
+}
+
+.sidebar-bottom-content { 
+    white-space: nowrap;   
+    overflow-y: hidden;    
+}
+
+.sidebar-instal {
+    /* position: absolute;
+    bottom: 0; */
+}
+
+
+/*Martin's classes for sidebar end*/
+
