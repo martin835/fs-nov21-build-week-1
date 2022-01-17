@@ -12,11 +12,33 @@ body {
     font-family: 'Kanit', sans-serif;
     /* font-family: 'Martel Sans', sans-serif;
     font-family: 'Nunito', sans-serif;
-    font-family: 'Source Sans Pro', sans-serif; */
+    font-family: 'Source Sans Pro', sans-serif;
+     font-family: 'Source Sans Pro', sans-serif; */
     background: rgb(107,1,1);
     background: linear-gradient(180deg, rgba(107,1,1,0.8645833333333334) 0%, rgba(23,0,0,1) 100%);
 }
 
+/*Martin's classes for sidebar*/
+.sidebar-bg {
+    background-color: var(--black-1);
+    color: var(--white-2);
+}
+
+.sidebar-logo {
+    color: var(--white-1);
+    font-size: 2rem;
+}
+
+.sidebar-logo-text {
+    font-size: 1.5rem;
+    vertical-align: text-top;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+/*Martin's classes for sidebar end*/
+
+/*Ali's classes for main section*/
 h1{
     color: var(--white-1);
     font-size: 2rem;
@@ -38,3 +60,4 @@ h1{
     font-weight: 700;
     margin: 0;
 }
+/*Ali's classes for main section end*/
