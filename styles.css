@@ -10,7 +10,32 @@
 
 body {
     font-family: 'Kanit', sans-serif;
-    font-family: 'Martel Sans', sans-serif;
+    /* font-family: 'Martel Sans', sans-serif;
     font-family: 'Nunito', sans-serif;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif; */
+    background: rgb(78,1,1);
+    background: linear-gradient(180deg, rgba(78,1,1,0.83984375) 0%, rgba(45,45,45,1) 24%, rgba(18,18,18,1) 27%);
+    background-attachment: fixed;
+}
+.h1-main{
+    color: var(--white-1);
+    font-size: 2rem;
+    font-family: 'Kanit', sans-serif;
+}
+.small-card-main{
+    background-color: rgba(184, 181, 181, 0.164);
+    border-radius: 5px;
+
+}
+.small-card-image-main{
+    width: 100%;
+    object-fit: cover;
+    padding:0;
+    border-radius: 2px;
+}
+.description-main{
+    color: var(--white-1);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
 }
