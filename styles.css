@@ -1,0 +1,16 @@
+:root {
+  --black-1: #000000;  /* The darkest black */
+  --black-2: #121212;  /* Slightly less dark black */
+  --black-3: #1f1f1f;  /* Less dark black */
+  --black-4: #2d2d2d; /* Less dark black */
+  --white-1: #ffffff; /* Purest white - Main text */
+  --white-2: #b2b2b2 ;  /* Dark white - secondary text */
+  --spotify-green: #1db954 ;  /* Signature spotify green */
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Martel Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
