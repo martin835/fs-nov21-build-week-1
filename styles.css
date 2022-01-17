@@ -10,11 +10,15 @@
 
 body {
     font-family: 'Kanit', sans-serif;
-    font-family: 'Martel Sans', sans-serif;
+    /* font-family: 'Martel Sans', sans-serif;
     font-family: 'Nunito', sans-serif;
     font-family: 'Source Sans Pro', sans-serif;
+     font-family: 'Source Sans Pro', sans-serif; */
+    background: rgb(107,1,1);
+    background: linear-gradient(180deg, rgba(107,1,1,0.8645833333333334) 0%, rgba(23,0,0,1) 100%);
 }
 
+/*Martin's classes for sidebar*/
 .sidebar-bg {
     background-color: var(--black-1);
     color: var(--white-2);
@@ -31,3 +35,29 @@ body {
     font-weight: 400;
     letter-spacing: -1px;
 }
+
+/*Martin's classes for sidebar end*/
+
+/*Ali's classes for main section*/
+h1{
+    color: var(--white-1);
+    font-size: 2rem;
+    font-family: 'Kanit', sans-serif;
+}
+.small-card{
+    background-color: rgba(184, 181, 181, 0.164);
+    border-radius: 5px;
+
+}
+.small-card-image{
+    width: 100%;
+    object-fit: cover;
+    padding:0;
+}
+.description{
+    color: var(--white-1);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}
+/*Ali's classes for main section end*/
