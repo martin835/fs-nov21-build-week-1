@@ -14,3 +14,20 @@ body {
     font-family: 'Nunito', sans-serif;
     font-family: 'Source Sans Pro', sans-serif;
 }
+
+.sidebar-bg {
+    background-color: var(--black-1);
+    color: var(--white-2);
+}
+
+.sidebar-logo {
+    color: var(--white-1);
+    font-size: 2rem;
+}
+
+.sidebar-logo-text {
+    font-size: 1.5rem;
+    vertical-align: text-top;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
