@@ -12,12 +12,79 @@ body {
     font-family: 'Kanit', sans-serif;
     /* font-family: 'Martel Sans', sans-serif;
     font-family: 'Nunito', sans-serif;
-    font-family: 'Source Sans Pro', sans-serif;
-
-     font-family: 'Source Sans Pro', sans-serif; */
-    background: rgb(107,1,1);
-    background: linear-gradient(180deg, rgba(107,1,1,0.8645833333333334) 0%, rgba(23,0,0,1) 100%);
+    font-family: 'Source Sans Pro', sans-serif; */
+    background: rgb(78,1,1);
+    background: linear-gradient(180deg, rgba(78,1,1,0.83984375) 0%, rgba(45,45,45,1) 24%, rgba(18,18,18,1) 27%);
+    background-attachment: fixed;
 }
+/*Ali's classes for main section*/
+
+
+
+.h1-main{
+    color: var(--white-1);
+    font-size: 2rem;
+    font-family: 'Kanit', sans-serif;
+}
+
+.h2-main{
+    color: var(--white-1);
+    font-size: 1.6rem;
+    font-family: 'Kanit', sans-serif;
+}
+.small-card-main{
+    background-color: rgba(184, 181, 181, 0.164);
+    border-radius: 5px;
+    padding: 0;
+
+}
+.small-card-image-main{
+    width: 50px;
+    object-fit: cover;
+    padding:0;
+    border-radius: 2px;
+}
+.description-main{
+    color: var(--white-1);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    padding-left: 10px;
+}
+
+
+.card-main{
+    background-color: var(--black-3);
+    border-radius: 2px;
+}
+.card-image-main{
+    width: 100%;
+}
+
+.card-title{
+    font-size: 14px;
+    color: var(--white-1);
+}
+
+.card-description-main{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--white-2);
+    font-size: 12px;
+    margin: 0;
+    line-height: 1;
+}
+
+.to-try-main{
+    color: var(--white-2);
+    font-size: 12px;
+}
+/*Ali's classes for main section end*/
+
+    
 
 /* Gbemi's classes for Navbar*/
 .navStyle{
@@ -98,28 +165,4 @@ border-radius: 20px;
 
 
 /*Martin's classes for sidebar end*/
-
-/*Ali's classes for main section*/
-h1{
-    color: var(--white-1);
-    font-size: 2rem;
-    font-family: 'Kanit', sans-serif;
-}
-.small-card{
-    background-color: rgba(184, 181, 181, 0.164);
-    border-radius: 5px;
-
-}
-.small-card-image{
-    width: 100%;
-    object-fit: cover;
-    padding:0;
-}
-.description{
-    color: var(--white-1);
-    font-size: 16px;
-    font-weight: 700;
-    margin: 0;
-}
-/*Ali's classes for main section end*/
 
