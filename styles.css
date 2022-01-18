@@ -193,3 +193,33 @@ border-radius: 20px;
 
 /*Martin's classes for sidebar end*/
 
+/* Martin's classes for the artist page */
+
+.artist-main-container {
+    background-image: url("Assests/foo-fighters-1.jpg") ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.artist-main-row-wrapper {
+    color: var(--white-1);
+
+}
+
+.artist-main-text-smaller {
+    font-size: 0.7rem;
+    
+}
+
+.artist-main-text-vertical-center {
+    vertical-align: middle;
+}
+
+.artist-main-color-blue {
+    color: #2e77d0;
+}
+
+
+
+/* Martin's classes for the artist page end */

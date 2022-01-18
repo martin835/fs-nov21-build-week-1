@@ -28,7 +28,7 @@
     <!-- This is the main container for the sections 1-3 -->
    
     <div class="container-fluid">
-        <div class="row">
+        <div class="row flex-nowrap">
             <!-- This is the container for the sidebar -->
             <div class="col-2 sidebar-bg">
                 <!-- Here goes Martin's code -->
@@ -68,30 +68,38 @@
             <!-- This is the container for the NavBar and MainSection -->
             
                 
-                    <div class="col-10">
+                    <div class="col-10 artist-main-container">
                 <!-- Gmebi's Navbar (originally not wrapped in a row and col-12) -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <a><i class="bi bi-caret-left align-content-left"></i></a>
-                                    <a><i class="bi bi-caret-right"></i></a>
-                                </div>
-                                <div class="navStyle d-inline-block">
-                                    <img src="user.png" alt="">
-                                    <span>Diego'Ziba' Ba...</span>
-                                    <i class="bi bi-caret-down"></i>
+                      
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a><i class="bi bi-caret-left align-content-left"></i></a>
+                                            <a><i class="bi bi-caret-right"></i></a>
+                                        </div>
+                                        <div class="navStyle d-inline-block">
+                                            <img src="user.png" alt="">
+                                            <span>Diego'Ziba' Ba...</span>
+                                            <i class="bi bi-caret-down"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                <!-- End of the NavBar row -->
+                        
+                    <!-- End of the NavBar row -->
 
-                <!-- Rows for the Main section (section 3) start here -->
-                    <!-- Here goes Martin's code: -->
-
-                
+                    <!-- Rows for the Main section (section 3) start here -->
+                        <!-- Here goes Martin's code: -->
+                        <div class="row artist-main-row-wrapper">
+                            <div class="col-12">
+                                <div class="artist-main-text-vertical-center" ><span class="artist-main-color-blue"><i class="bi bi-patch-check-fill"></i></span> <span class="artist-main-text-smaller
+                                    "> Verified artist </span> </div>
+                                <h1>Foo Fighters</h1>
+                                <div class="artist-main-text-smaller">37,123,321 monthly listeners</div>
+                            </div>
+                        </div> 
+                    </div>    
                     
 
 
