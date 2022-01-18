@@ -82,6 +82,30 @@ body {
     color: var(--white-2);
     font-size: 12px;
 }
+
+
+
+@media (max-width: 767px) {
+    .hidden-sm{
+        display: none;
+    }
+}
+@media (max-width: 1020px) {
+    .hidden-md{
+        display: none;
+    }
+}
+@media (max-width: 1199px) {
+    .hidden-l{
+        display: none;
+    }
+}
+
+
+
+
+
+
 /*Ali's classes for main section end*/
 
     
