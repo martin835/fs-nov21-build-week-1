@@ -117,13 +117,25 @@ color: var(--white-1);
 border-radius: 20px;
 }
 
+.footer-song-text {
+    min-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.footer-class{
+    color: var(--white-1);
+    background-color: var(--black-4);
+}
+
 /*Martin's classes for sidebar*/
 .sidebar-bg {
     background-color: var(--black-1);
     color: var(--white-2);
     height: calc(100vh - 24px); 
-    white-space: nowrap;
-    overflow-y: auto;   
+    min-width: 180px;
+ 
 }
 
 .sidebar-logo {
@@ -165,6 +177,7 @@ border-radius: 20px;
 
 .sidebar-bottom {
     font-size: 0.8rem;
+   
     /* position: relative; */
 
        
@@ -178,14 +191,40 @@ border-radius: 20px;
 }
 
 .sidebar-bottom-content { 
+    height: calc(50vh - 40px);
+    overflow-y: auto;
     white-space: nowrap;   
-    overflow-y: hidden;    
+      
 }
 
 .sidebar-instal {
     /* position: absolute;
     bottom: 0; */
 }
+
+/* Styling scroll-bar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--black-4);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--black-2);
+}
+
+/* Styling scroll-bar end */
 
 
 /*Martin's classes for sidebar end*/
