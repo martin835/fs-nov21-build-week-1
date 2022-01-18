@@ -98,6 +98,7 @@ border-radius: 20px;
     background-color: var(--black-1);
     color: var(--white-2);
     height: calc(100vh - 24px); 
+    min-width: 180px;
  
 }
 
