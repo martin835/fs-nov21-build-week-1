@@ -234,6 +234,25 @@ border-radius: 20px;
     color: var(--spotify-green);
 }
 
+.artist-main-songs-list img {
+    height: 30px;
+    width: 30px;
+}
+
+.artist-main-songs-list {
+    color: var(--white-1);
+}
+
+.artist-main-songs-list span:last-of-type {
+    margin-left: 1rem;
+}
+
+
+.artist-main-songs-right {
+    color: var(--white-2);
+    margin-top: 1.2rem;
+}
+
 
 
 /* Martin's classes for the artist page end */
