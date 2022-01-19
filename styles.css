@@ -115,6 +115,29 @@ body {
 background-color: var(--black-3);
 color: var(--white-1);
 border-radius: 20px;
+align-items: center;
+}
+
+.bi{
+    color: white !important;
+    align-items: center;
+}
+
+.navbar_arrow{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: var(--black-3);
+    display: inline-block;
+    
+}
+.navbar_arrow1{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: var(--black-4);
+    display: inline-block;
+    
 }
 
 .footer-class{
@@ -122,6 +145,88 @@ border-radius: 20px;
     background-color: var(--black-4);
 }
 
+.card-head{
+    background-color: linear-gradient(180deg, rgba(78,1,1,0.83984375) 0%, rgba(45,45,45,1) 24%, rgba(18,18,18,1) 27%);
+    border-radius: 5px;
+    padding: 0;
+    align-items: flex-end;
+
+}
+.card-image-head{
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    padding:0;
+    border-radius: 2px;
+}
+.description-head_1{
+    color: var(--white-1);
+    font-size: 10px;
+    margin: 0;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.description-head_2{
+    color: var(--white-1);
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    padding-left: 10px;
+}
+.description-head_3{
+    color: var(--white-1);
+    font-size: 10px;
+    margin: 0;
+    padding-left: 10px;
+}
+
+.circles{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--spotify-green);
+    position: absolute;
+}
+.list_album{
+    color: white;
+    align-items: center;
+
+}
+
+.list_numbers{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-left: 17px;
+    align-items: center;
+
+}
+.under_text{
+    font-size: 12px;
+    margin-top: 0px;
+    color: var(--white-2)
+
+}
+
+.fox{
+    padding-top: 15px;
+}
+.numb{
+    padding: 5px 10px;
+    margin-left: 6px;
+    
+}
+.num{
+    color: var(--white-1);
+    padding-top: 11px;
+}
+.ash_tag{
+    color: white;
+    padding: 10px 10px;
+    margin: 5px 10px;
+}
 /*Martin's classes for sidebar*/
 .sidebar-bg {
     background-color: var(--black-1);
