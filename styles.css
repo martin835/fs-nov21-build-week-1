@@ -150,8 +150,17 @@ body {
     background-color: #181818;
 }
 
+.footer-play-button-wrapper {
+    max-height: 48px; 
+    max-width: 48px; 
+}
+
 .footer-play-button-bigger {
     font-size: 2rem;
+    /* color: var(--spotify-green); */
+}
+.footer-play-button-bigger:hover {
+    font-size: 2.2rem;
     /* color: var(--spotify-green); */
 }
 
