@@ -240,7 +240,7 @@ body {
 }
 
 .sidebar-bottom-content { 
-    height: calc(50vh - 40px);
+    height: calc(50vh - 50px);
     overflow-y: auto;
     white-space: nowrap;   
       
