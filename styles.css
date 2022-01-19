@@ -222,3 +222,66 @@ border-radius: 20px;
 
 /*Martin's classes for sidebar end*/
 
+/* Martin's classes for the artist page */
+
+.artist-main-container {
+    background-image: url("Assests/foo-fighters-1.jpg") ;
+    background-position: center 45%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 45vh;
+    z-index: -1;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.artist-main-row-wrapper {
+    color: var(--white-1);
+
+}
+
+.artist-main-text-smaller {
+    font-size: 0.7rem;
+    
+}
+
+.artist-main-text-vertical-center {
+    vertical-align: middle;
+}
+
+.artist-main-color-blue {
+    color: #2e77d0;
+}
+
+.artist-main-play-button {
+    font-size: 3rem;
+    color: var(--spotify-green);
+}
+
+.artist-main-songs-list img {
+    height: 30px;
+    width: 30px;
+}
+
+.artist-main-songs-list {
+    color: var(--white-1);
+}
+
+.artist-main-songs-list span:last-of-type {
+    margin-left: 1rem;
+}
+
+
+.artist-main-songs-right {
+    color: var(--white-2);
+    margin-top: 1.2rem;
+}
+
+
+
+/* Martin's classes for the artist page end */
