@@ -43,7 +43,7 @@ const playListContainer = document.getElementById("play-list-container");
 let playListHtml = " ";
 
 const loadPlayList = function () {
-    
+    console.log("sdasd")
     for (i = 0; i < playlist.length; i++) {
     playListHtml = `        <div class="row align-items-center py-3">
                                 <div class="col-9 col-sm-6 artist-main-songs-list">
@@ -126,8 +126,7 @@ const stopBar = function () {
 
 const btnPlay = document.getElementById("button-play");
 
-btnPlay.addEventListener("click", moveBar);
-btnPlay.addEventListener("click", stopBar);
+
 
 
 
