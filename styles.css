@@ -369,7 +369,30 @@ body {
     margin-left: 1rem;
 }
 
+.under_text{
+    font-size: 12px;
+    padding-top: 0px;
 
+}
+
+.ash_tag{
+    color: var(--white-1);
+    padding-left: 0px;
+    padding-right: 5px;
+}
+
+.description{
+    color: var(--white-1);
+}
+
+.description-head_1{
+    font-size: 16px;
+}
+
+.card-image-head{
+    width: 210px;
+    height: 250px;
+}
 .artist-main-songs-right {
     color: var(--white-2);
    
