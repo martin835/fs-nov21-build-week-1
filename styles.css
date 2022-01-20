@@ -196,10 +196,60 @@ div.card-main:hover{
 
 /* Gbemi's classes for Navbar*/
 .navStyle{
-background-color: var(--black-3);
-color: var(--white-1);
-border-radius: 20px;
+
+    background-color: var(--black-1);
+    color: var(--white-1);
+    border-radius: 20px;
+    height: 80%;
 }
+
+.navStyle > div:first-of-type > i  {
+    font-size: 2rem;
+}
+
+.navbar-chevrons {
+    font-size: 2rem;
+    color: var(--black-1);
+    padding: 0;
+}
+
+
+.navbar-chevrons > a:hover {
+    cursor: pointer;
+}
+
+.nav-wrapper-outter {
+    position: relative;
+    width: 100%;
+}
+
+.nav-play-button{
+    height: 72px;
+    width: 48px;
+}
+
+.nav-wrapper-inner {
+    position: fixed;
+    width: 83.5%;
+    z-index: 2;
+    margin-left: -15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.nav-background-toggle-artist {
+    background-color: #181818;
+    
+}
+
+.nav-text-toggling {
+    color: var(--white-1);
+    font-size: 1.7rem;
+    letter-spacing: -1px;
+}
+
+
+
 
 .footer-class{
     color: var(--white-1);
