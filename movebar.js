@@ -1,4 +1,4 @@
-/* JS FOR PROGRESS BAR  */
+/* PLAYLIST ARRAY OF OBJECTS */
 
 const playlist = [
   {
@@ -38,12 +38,14 @@ const playlist = [
   },
 ]; 
 
+/* PLAYLIST ARRAY OF OBJECTS END */
+
 /* GENERATE PLAYLIST VARIABLES AND FUNCTION */
 const playListContainer = document.getElementById("play-list-container");
 let playListHtml = " ";
 
 const loadPlayList = function () {
-    console.log("sdasd")
+    
     for (i = 0; i < playlist.length; i++) {
     playListHtml = `        <div class="row align-items-center py-3">
                                 <div class="col-9 col-sm-6 artist-main-songs-list">
@@ -80,7 +82,7 @@ const playBtnIcons  = document.querySelectorAll("#button-play > i");
 const durationContainer = document.getElementById("timer-end");
 const timerStart = document.getElementById("timer-start");
 
-console.log(durationContainer);
+
 /* PLAYER GLOBAL VARIABLES END */
 
 /* GET VALUES TO THE PLAYER */
@@ -95,7 +97,7 @@ const getMeSong = function  (e) {
 
 /* GET VALUES TO THE PLAYER END */
 
-
+/* JS FOR PROGRESS BAR */
 let i = 0; 
 
 const moveBar = function () {
