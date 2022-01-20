@@ -213,7 +213,7 @@ const smallCardDisplay = function(){
                             <div class="mx-1 small-card-main d-flex align-items-center  my-2">
                                 <img class="small-card-image-main"
                                     src="${dataSmall[x].cover}" alt="">
-                                    <p class=" description-main"> ${dataSmall[x].title}</p>
+                                    <a href="index-album.html"><p class=" description-main"> ${dataSmall[x].title}</p></a>
                             </div>
                         </div>
                         
