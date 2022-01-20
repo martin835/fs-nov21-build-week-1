@@ -193,9 +193,8 @@ div.card-main:hover{
 
     
 
-/* Gbemi's classes for Navbar*/
+/* Gbemi's classes for Navbar AND Footer - EDITED BY MARTIN*/
 .navStyle{
-
     background-color: var(--black-1);
     color: var(--white-1);
     border-radius: 20px;
@@ -249,19 +248,48 @@ div.card-main:hover{
 
 
 
-
 .footer-class{
     color: var(--white-1);
-    background-color: var(--black-4);
+    background-color: #181818;
 }
+
+.footer-play-button-wrapper {
+    max-height: 48px; 
+    max-width: 48px; 
+}
+
+.footer-play-button-bigger {
+    font-size: 2rem;
+    /* color: var(--spotify-green); */
+}
+.footer-play-button-bigger:hover {
+    font-size: 2.2rem;
+    /* color: var(--spotify-green); */
+}
+
+.footer-person-icon-bigger{
+    font-size: 2.5rem;
+}
+
+.footer-tile {
+    width: 55px;
+}
+
+/* Gbemi's classes for Navbar AND Footer - EDITED BY MARTIN  END */
 
 /*Martin's classes for sidebar*/
 .sidebar-bg {
     background-color: var(--black-1);
     color: var(--white-2);
     height: calc(100vh - 24px); 
-    min-width: 180px;
- 
+    min-width: 180px; 
+}
+
+.sidebar-bg >div > div > span:hover {
+    color: var(--white-1);
+}
+.sidebar-bg >div > div > div:hover {
+    color: var(--white-1);
 }
 
 .sidebar-logo {
@@ -317,7 +345,7 @@ div.card-main:hover{
 }
 
 .sidebar-bottom-content { 
-    height: calc(50vh - 40px);
+    height: calc(50vh - 50px);
     overflow-y: auto;
     white-space: nowrap;   
       
@@ -363,7 +391,7 @@ div.card-main:hover{
     background-size: cover;
     background-repeat: no-repeat;
     height: 45vh;
-    z-index: -1;
+    /* z-index: -1; */
     margin-left: -15px;
     margin-right: -15px;
     padding-left: 15px;
@@ -371,11 +399,29 @@ div.card-main:hover{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+}
+
+.artist-main-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.35;
 }
 
 .artist-main-row-wrapper {
     color: var(--white-1);
 
+}
+
+.artist-main-row-wrapper h1 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    letter-spacing: -1px;
 }
 
 .artist-main-text-smaller {
@@ -392,8 +438,27 @@ div.card-main:hover{
 }
 
 .artist-main-play-button {
+    max-width: 3rem;
+    max-height: 4.5rem;
     font-size: 3rem;
     color: var(--spotify-green);
+    position: relative;
+}
+
+.artist-main-play-button-inner-div {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top:35%;
+    left: 25%;
+    bottom:20%;
+    right: 20%;
+    z-index: -1;
+    background-color: var(--white-1);
+}
+
+.artist-main-play-button i:hover {
+    font-size: 3.3rem;
 }
 
 .artist-main-songs-list img {
@@ -409,14 +474,52 @@ div.card-main:hover{
     margin-left: 1rem;
 }
 
-
-
 .artist-main-songs-right {
     color: var(--white-2);
-    margin-top: 1.2rem;
+   
 }
 
+.artist-text-secundary {
+    color: var(--white-2)
+}
 
+.artist-text-secundary:hover {
+    color: var(--white-1)
+}
+
+.artist-songs-table-wrapper > .row:hover > div:last-of-type > span:last-of-type::after {
+    content: '\f141';     
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    margin:0px 0px 0px 10px;
+    text-decoration:none;
+}
+.artist-songs-table-wrapper > .row:hover > div:last-of-type > span:last-of-type::before {
+    content: '\f004';     
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    margin:0px 10px 0px 0px;
+    text-decoration:none;
+}
+
+.artist-songs-table-wrapper > .row:hover {
+    background-color: var(--black-4);
+    border-radius: 5px;
+    
+}
+
+.artist-follow:hover {
+    border:2px solid var(--white-1) !important;
+}
+
+.artist-songs-table-wrapper > .row:hover > div:first-of-type > span:first-of-type {
+    display: none;
+}
+.artist-songs-table-wrapper > .row:hover > div:first-of-type > span:nth-of-type(2) {
+    display: inline-block !important;
+}
 
 /* Martin's classes for the artist page end */
 
