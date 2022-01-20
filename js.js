@@ -4,6 +4,7 @@ const buttonsToChange = document.getElementsByClassName(
 );
 
 const navBarToToggle = document.querySelector(".nav-wrapper-inner");
+const navTextToggle = document.querySelector(".nav-text-toggling");
 
 console.log(navBarToToggle);
 console.log(buttonsToChange);
@@ -24,6 +25,7 @@ const observerNav = new IntersectionObserver(function (entries, observer) {
           buttonsToChange[0].classList.remove("d-none");
           buttonsToChange[1].classList.add("d-none");
           navBarToToggle.classList.add("nav-background-toggle-artist");
+          navTextToggle.classList.remove("d-none");
           return;
         }
         
@@ -32,13 +34,8 @@ const observerNav = new IntersectionObserver(function (entries, observer) {
             buttonsToChange[0].classList.add("d-none");
             buttonsToChange[1].classList.remove("d-none");
             navBarToToggle.classList.remove("nav-background-toggle-artist");
-            
+            navTextToggle.classList.add("d-none");            
         }
-
-         
-
-        
-
     });
 }, options);
 
