@@ -118,6 +118,10 @@ div.card-main:hover .son2{
     opacity: 1;   
 }
 
+div.small-card-main:hover {
+    background-color: #8d8a8a63;
+}
+
 /* div.card-main:hover .card-image-main{
     opacity: 0.8;
     background-color: #cfcaca !important;  
