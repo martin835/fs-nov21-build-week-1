@@ -13,8 +13,8 @@ body {
     /* font-family: 'Martel Sans', sans-serif;
     font-family: 'Nunito', sans-serif;
     font-family: 'Source Sans Pro', sans-serif; */
-    background: rgb(78,1,1);
-    background: linear-gradient(180deg, rgba(78,1,1,0.83984375) 0%, rgba(45,45,45,1) 24%, rgba(18,18,18,1) 27%);
+    background: rgb(162,2,2);
+    background: linear-gradient(180deg, rgba(162,2,2,0.83984375) 0%, #121212 19%);
     background-attachment: fixed;
 }
 /*Ali's classes for main section*/
@@ -36,13 +36,17 @@ body {
     background-color: rgba(184, 181, 181, 0.164);
     border-radius: 5px;
     padding: 0;
+    height: 6em;
+    overflow: hidden;
 
 }
 .small-card-image-main{
-    width: 50px;
+    width: 6em;
+    height: 100%;
     object-fit: cover;
     padding:0;
     border-radius: 2px;
+    
 }
 .description-main{
     color: var(--white-1);
@@ -54,12 +58,21 @@ body {
 
 
 .card-main{
-    background-color: var(--black-3);
+    background-color: #1f1f1f;
     border-radius: 2px;
+    opacity: 1;
+    overflow: hidden;
+    
 }
+
 .card-image-main{
-    width: 100%;
+    width: 14em;
+    border-radius: 35px;
+    height: 14em;
+    object-fit: cover;
 }
+
+
 
 .card-title{
     font-size: 14px;
@@ -82,7 +95,72 @@ body {
     color: var(--white-2);
     font-size: 12px;
 }
+.son{
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+    /* bottom: 0;
+    right: 0; */
+    z-index: 3;
+    opacity: 1;
+}
+.son2{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    top: -15px;
+    left: -15px; 
+    z-index: 4;
+    opacity:0;
 
+    transition: opacity 0.2s ease-out;
+} 
+div.card-main:hover .son2{
+    opacity: 1;   
+}
+
+div.small-card-main:hover {
+    background-color: #8d8a8a63;
+}
+
+/* div.card-main:hover .card-image-main{
+    opacity: 0.8;
+    background-color: #cfcaca !important;  
+} */
+div.card-main:hover{
+    opacity: 0.8;
+    background-color: #8d8a8a63 ;  
+}
+.imagewrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.5em solid var(--white-1);
+  padding-right: 0.75em;
+}
+
+.playbutton{
+    width: 2.2em;
+    height: 2.2em;
+    background-color: var(--spotify-green);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border-radius: 50%;
+    opacity: 1;
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
+    
+}
 
 
 @media (max-width: 767px) {
@@ -90,13 +168,18 @@ body {
         display: none;
     }
 }
-@media (max-width: 1020px) {
+@media (max-width: 1023px) {
     .hidden-md{
         display: none;
     }
 }
 @media (max-width: 1199px) {
     .hidden-l{
+        display: none;
+    }
+}
+@media (min-width: 1199px) {
+    .hidden-xl{
         display: none;
     }
 }
@@ -110,7 +193,7 @@ body {
 
     
 
-/* Gbemi's classes for Navbar*/
+/* Gbemi's classes for Navbar AND Footer - EDITED BY MARTIN*/
 .navStyle{
     background-color: var(--black-1);
     color: var(--white-1);
@@ -191,6 +274,8 @@ body {
 .footer-tile {
     width: 55px;
 }
+
+/* Gbemi's classes for Navbar AND Footer - EDITED BY MARTIN  END */
 
 /*Martin's classes for sidebar*/
 .sidebar-bg {
@@ -436,5 +521,44 @@ body {
     display: inline-block !important;
 }
 
-
 /* Martin's classes for the artist page end */
+
+
+/* Gbemi's classses for Album page*/
+
+.under_text{
+    font-size: 12px;
+    padding-top: 0px;
+
+}
+
+.ash_tag{
+    color: var(--white-1);
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.card-head{
+    padding: 0px;
+}
+
+.card-head-image{
+    padding: 0px 0px;
+    max-width: 100%;
+}
+
+.description{
+    color: var(--white-1);
+    padding: 0px 0px;
+}
+
+.description-head_1{
+    font-size: 16px;
+}
+
+.card-image-head{
+    width: 210px;
+    height: 250px;
+}
+
+/* End of Gbemi's Album code*/
