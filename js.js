@@ -1,5 +1,13 @@
 /* JS FOR THE INTERSECTION OBSERVER */
 
+/* 
+HOW TO:
+https://www.youtube.com/watch?v=T8EYosX4NOo&ab_channel=KevinPowell
+https://www.youtube.com/watch?v=RxnV9Xcw914&ab_channel=KevinPowell
+https://www.youtube.com/watch?v=huVJW23JHKQ&ab_channel=KevinPowell
+
+*/
+
 const sectionToOBserve = document.getElementById("under-hero-section");
 const buttonsToChange = document.getElementsByClassName(
   "artist-main-play-button"
