@@ -422,7 +422,7 @@ const convertToMilis = function (indexOfTheSong) {
    let timeinterval = setInterval(updateClock, 1000);
  }
 
-function countTimeUp (id, endtime) {
+function countTimeUp (id, endtime, play) {
     const clock = document.getElementById(id);
     const timeInSecs = endtime;
     let secCounter = 0;
@@ -436,8 +436,10 @@ function countTimeUp (id, endtime) {
       }
     }
 
-    updateTimer(); // run function once at first to avoid delay
-    let timeinterval = setInterval(updateTimer, 1000);
+    if (play) {
+        updateTimer(); // run function once at first to avoid delay
+        let timeinterval = setInterval(updateTimer, 1000);
+    }
 } 
 
 
@@ -490,7 +492,7 @@ const playSong = function () {
   /* THIS STARTS COUNTING DOWN THE CLOCK END */
   /* THIS STARTS COUNTING UP THE CLOCK */
   timerStart.innerText = " ";
-  countTimeUp("timer-start", timeInSeconds);
+  countTimeUp("timer-start", timeInSeconds ,true);
   /* THIS STARTS COUNTING UP THE CLOCK END */
 }
 
@@ -502,6 +504,9 @@ const pauseSong = function () {
     playBtnIconsMain[1].classList.add("d-none");
     playBtnIconsNav[0].classList.remove("d-none");
     playBtnIconsNav[1].classList.add("d-none");
+
+
+    
 };
 
 /* EVENT LISTENERS FOR PLAYING SONG */
