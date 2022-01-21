@@ -527,7 +527,8 @@ a:hover {
 
 .description {
   color: var(--white-1);
-  align-self: flex-end;
+
+  align-self: end;
 }
 
 .description-head_1 {
