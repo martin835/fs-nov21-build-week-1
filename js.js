@@ -206,14 +206,14 @@ const toTryCardDisplay = function(){
     responsiveToTry()
 }
 
-
+/* ALI's JS END */
 
  
 
 
+/* MARTIN'S JS START */
 
-
-
+/* INTERSECTION OBSERVERS START */
 
 const sectionToOBserve = document.getElementById("under-hero-section");
 const buttonsToChange = document.getElementsByClassName(
@@ -223,8 +223,7 @@ const buttonsToChange = document.getElementsByClassName(
 const navBarToToggle = document.querySelector(".nav-wrapper-inner");
 const navTextToggle = document.querySelector(".nav-text-toggling");
 
-console.log(navBarToToggle);
-console.log(buttonsToChange);
+
 
 const options = {
     root: null,
@@ -348,70 +347,106 @@ const loadPlayList = function () {
 /* PLAYER GLOBAL VARIABLES */
 const playBtnContainer = document.getElementById("button-play");
 const playImage = document.getElementById("play-image");
-const playSong = document.getElementById("play-song");
+const playingSong = document.getElementById("play-song");
 const playBand = document.getElementById("play-band");
 const playBtnIcons  = document.querySelectorAll("#button-play > i");
 const durationContainer = document.getElementById("timer-end");
 const timerStart = document.getElementById("timer-start");
-
+let songInThePlayerIndex = 0; 
 
 /* PLAYER GLOBAL VARIABLES END */
 
 /* GET VALUES TO THE PLAYER */
 const getMeSong = function  (e) {
-    console.log(e.target.id);
-    console.log(typeof parseInt(e.target.id.charAt(e.target.id.length - 1)));
+    /* console.log(e.target.id);
+    console.log(typeof parseInt(e.target.id.charAt(e.target.id.length - 1))); */
     let songId = parseInt(e.target.id.charAt(e.target.id.length - 1)); 
-    playSong.innerText = playlist[songId].song;
+    playingSong.innerText = playlist[songId].song;
     playImage.src = playlist[songId].cover_image;
     durationContainer.innerText = playlist[songId].duration;
+    songInThePlayerIndex = songId;
 }
 
 /* GET VALUES TO THE PLAYER END */
 
-/* JS FOR PROGRESS BAR */
-let i = 0; 
+/* FUNCTION TO CONVERT MINUTES  AND SECUNDS TO MILISECONDS */
 
-const moveBar = function () {
+
+
+const convertToMilis = function (indexOfTheSong) {
+    let minutes = parseInt(playlist[indexOfTheSong].duration.split(":")[0]);
+    let seconds = parseInt(playlist[indexOfTheSong].duration.split(":")[1]);
+
+    return minutes * 60000 + seconds * 1000; 
+}
+
+
+
+/* JS FOR PROGRESS BAR */
+
+const moveBar = function () {    
    
-   
+    let i = 0; 
+    let duration = convertToMilis(songInThePlayerIndex);
+    let step = 10;
     if (i == 0) {
         i = 1;
-        let elem = document.getElementById("myBar");
-        console.log(elem);
+        let elem = document.getElementById("myBar");        
         let width = 1;
-        let id = setInterval(frame, 100);
+        let id = setInterval(frame, 1000);
             function frame() {
             if (width >= 100) {
-                clearInterval(id);
-                i = 0;
+              clearInterval(id);
+              i = 0;
             } else {
-                width++;
-                elem.style.width = width + "%";
+              width+=step;
+              console.log(width);
+              elem.style.width = width + "%";
             }
             }
   }
 };
 
-const stopBar = function () {
-    i = 1;
-    console.log(i)
+
+const playSong = function () {
+    playBtnContainer.classList.add("play");
+    playBtnIcons[0].classList.add("d-none");
+    playBtnIcons[1].classList.remove("d-none");
+    moveBar();
 }
 
-const btnPlay = document.getElementById("button-play");
-
-
-
-
-
-window.onload = function () {
-  loadPlayList();
-  recentCardDisplay();
-  toTryCardDisplay();
+const pauseSong = function () {
+    playBtnContainer.classList.remove("play");
+    playBtnIcons[0].classList.remove("d-none");
+    playBtnIcons[1].classList.add("d-none");
 };
+
+/* EVENT LISTENERS FOR PLAYING SONG */
+playBtnContainer.addEventListener("click", () =>{
+    const isPlaying = playBtnContainer.classList.contains("play");
+
+    if (isPlaying) {
+        pauseSong();
+    } else {
+        playSong();
+    }
+
+} );
+
+
+
+
+
+
 
 /* JS FOR PROGRESS BAR END  */
 
 
 
 /* MOVE BAR END */
+
+window.onload = function () {
+  loadPlayList();
+  recentCardDisplay();
+  toTryCardDisplay();
+};
