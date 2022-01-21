@@ -38,6 +38,7 @@ body {
     padding: 0;
     height: 6em;
     overflow: hidden;
+    transition: box-shadow 0.2s ease-in;
 
 }
 .small-card-image-main{
@@ -59,9 +60,10 @@ body {
 
 .card-main{
     background-color: #1f1f1f;
-    border-radius: 2px;
+    border-radius: 10px;
     opacity: 1;
     overflow: hidden;
+    transition: box-shadow 0.2s ease-in;
     
 }
 
@@ -122,18 +124,24 @@ div.card-main:hover .son2{
 
 div.small-card-main:hover {
     background-color: #8d8a8a63;
+    box-shadow: 10px 5px 5px black;
 }
 
 
 div.card-main:hover{
     opacity: 0.8;
-    background-color: #8d8a8a63 ;  
+    background-color: #8d8a8a63 ; 
+    box-shadow: 10px 5px 15px black; 
 }
 .imagewrapper{
     position: relative;
     width: 100%;
     height: 100%;
     
+}
+
+.playbutton:hover{
+    font-size: 1.3em;
 }
 
 
@@ -157,6 +165,7 @@ div.card-main:hover{
     opacity: 1;
     margin-bottom: 0.5em;
     margin-right: 0.5em;
+    transition: font-size 0.2s ease-in-out;
     
 }
 
@@ -555,8 +564,11 @@ a:hover{
 }
 
 .card-image-head{
-    width: 210px;
-    height: 250px;
+    width: 150px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px black;
 }
 
 /* End of Gbemi's Album code*/
