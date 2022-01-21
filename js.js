@@ -129,7 +129,7 @@ const recentCardDisplay = function(){
             array.push(x)
             const inhalt = `
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 ">
-        <a href="album.html">
+        <a href="index-album.html">
             <div class="card-main pb-1">
                 <div class="d-flex justify-content-center">
         
@@ -172,7 +172,7 @@ const toTryCardDisplay = function(){
             array.push(x)
             const inhalt = `
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 ">
-        <a href="album.html">
+        <a href="index-album.html">
             <div class="card-main pb-1">
                 <div class="d-flex justify-content-center">
         
