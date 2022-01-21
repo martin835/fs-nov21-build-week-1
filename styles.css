@@ -527,6 +527,7 @@ a:hover {
 
 .description {
   color: var(--white-1);
+
   align-self: end;
 }
 
