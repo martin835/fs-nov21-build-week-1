@@ -210,12 +210,14 @@ const smallCardDisplay = function(){
             array.push(x)
             const inhalt = `
             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <a href="index-album.html">
                             <div class="mx-1 small-card-main d-flex align-items-center  my-2">
                                 <img class="small-card-image-main"
                                     src="${dataSmall[x].cover}" alt="">
                                     <a href="index-album.html"><p class=" description-main"> ${dataSmall[x].title}</p></a>
                             </div>
-                        </div>
+                        </a>
+            </div>
                         
                         `
     container.innerHTML +=inhalt 
@@ -234,29 +236,30 @@ const recentCardDisplay = function(){
             array.push(x)
             const inhalt = `
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 ">
-                            <div class="card-main pb-1">
-                                <div class="d-flex justify-content-center">
-
-                                    <div class="d-flex justify-content-center">
-                                        <div class="imagewrapper">
-                                            <div class="son">
-                                                <img class="px-3 py-3 card-image-main" src="${dataMain[x].cover}"
-                                                    alt="">
-                                            </div>
-                                            <div class="son2 d-flex justify-content-end align-items-end">
-                                                <div class="playbutton mb-3 mr-3">
-                                                    <div class="arrow-right"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
+        <a href="artist.html">
+            <div class="card-main pb-1">
+                <div class="d-flex justify-content-center">
+        
+                    <div class="d-flex justify-content-center">
+                        <div class="imagewrapper">
+                            <div class="son">
+                                <img class="px-3 py-3 card-image-main" src="${dataMain[x].cover}" alt="">
+                            </div>
+                            <div class="son2 d-flex justify-content-end align-items-end">
+                                <div class="playbutton mb-3 mr-3">
+                                    <div class="arrow-right"></div>
                                 </div>
-                                <h6 class="px-2 my-1 card-title">${dataMain[x].title}</h6>
-                                <p class="card-description-main my-2 px-2 ">${dataMain[x].description}</p>
-                                    
                             </div>
                         </div>
+                    </div>
+        
+                </div>
+                <h6 class="px-2 my-1 card-title">${dataMain[x].title}</h6>
+                <p class="card-description-main my-2 px-2 ">${dataMain[x].description}</p>
+        
+            </div>
+        </a>
+    </div>
                         
                         `
     container.innerHTML +=inhalt 
@@ -276,29 +279,30 @@ const toTryCardDisplay = function(){
             array.push(x)
             const inhalt = `
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 ">
-                            <div class="card-main pb-1">
-                                <div class="d-flex justify-content-center">
-
-                                    <div class="d-flex justify-content-center">
-                                        <div class="imagewrapper">
-                                            <div class="son">
-                                                <img class="px-3 py-3 card-image-main" src="${dataMain[x].cover}"
-                                                    alt="">
-                                            </div>
-                                            <div class="son2 d-flex justify-content-end align-items-end">
-                                                <div class="playbutton mb-3 mr-3">
-                                                    <div class="arrow-right"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
+        <a href="artist.html">
+            <div class="card-main pb-1">
+                <div class="d-flex justify-content-center">
+        
+                    <div class="d-flex justify-content-center">
+                        <div class="imagewrapper">
+                            <div class="son">
+                                <img class="px-3 py-3 card-image-main" src="${dataMain[x].cover}" alt="">
+                            </div>
+                            <div class="son2 d-flex justify-content-end align-items-end">
+                                <div class="playbutton mb-3 mr-3">
+                                    <div class="arrow-right"></div>
                                 </div>
-                                <h6 class="px-2 my-1 card-title">${dataMain[x].title}</h6>
-                                <p class="card-description-main my-2 px-2 ">${dataMain[x].description}</p>
-                                    
                             </div>
                         </div>
+                    </div>
+        
+                </div>
+                <h6 class="px-2 my-1 card-title">${dataMain[x].title}</h6>
+                <p class="card-description-main my-2 px-2 ">${dataMain[x].description}</p>
+        
+            </div>
+        </a>
+    </div>
                         
                         `
     container.innerHTML +=inhalt 
