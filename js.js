@@ -206,6 +206,9 @@ const toTryCardDisplay = function(){
     responsiveToTry()
 }
 
+
+
+
 const display = function () {
 
             let storedName = localStorage.getItem("name")
@@ -230,12 +233,13 @@ function store() {
 
 display()
 
+/* ALI's JS END */
  
 
 
+/* MARTIN'S JS START */
 
-
-
+/* INTERSECTION OBSERVERS START */
 
 const sectionToOBserve = document.getElementById("under-hero-section");
 const buttonsToChange = document.getElementsByClassName(
@@ -245,8 +249,7 @@ const buttonsToChange = document.getElementsByClassName(
 const navBarToToggle = document.querySelector(".nav-wrapper-inner");
 const navTextToggle = document.querySelector(".nav-text-toggling");
 
-console.log(navBarToToggle);
-console.log(buttonsToChange);
+
 
 const options = {
     root: null,
@@ -369,71 +372,195 @@ const loadPlayList = function () {
 
 /* PLAYER GLOBAL VARIABLES */
 const playBtnContainer = document.getElementById("button-play");
+const playBtnContainerMain = document.getElementById("artist-main-play-button");
+const playBtnContainerNav = document.getElementById("artist-nav-play-button");
 const playImage = document.getElementById("play-image");
-const playSong = document.getElementById("play-song");
+const playingSong = document.getElementById("play-song");
 const playBand = document.getElementById("play-band");
-const playBtnIcons  = document.querySelectorAll("#button-play > i");
+const playBtnIconsFooter  = document.querySelectorAll("#button-play > i");
+const playBtnIconsMain = document.querySelectorAll(
+  "#artist-main-play-button > i"
+);
+const playBtnIconsNav = document.querySelectorAll(
+  "#artist-nav-play-button > i"
+);
 const durationContainer = document.getElementById("timer-end");
 const timerStart = document.getElementById("timer-start");
-
+let songInThePlayerIndex = 0; 
 
 /* PLAYER GLOBAL VARIABLES END */
 
 /* GET VALUES TO THE PLAYER */
 const getMeSong = function  (e) {
-    console.log(e.target.id);
-    console.log(typeof parseInt(e.target.id.charAt(e.target.id.length - 1)));
+    /* console.log(e.target.id);
+    console.log(typeof parseInt(e.target.id.charAt(e.target.id.length - 1))); */
     let songId = parseInt(e.target.id.charAt(e.target.id.length - 1)); 
-    playSong.innerText = playlist[songId].song;
+    playingSong.innerText = playlist[songId].song;
     playImage.src = playlist[songId].cover_image;
     durationContainer.innerText = playlist[songId].duration;
+    songInThePlayerIndex = songId;
 }
 
 /* GET VALUES TO THE PLAYER END */
 
-/* JS FOR PROGRESS BAR */
-let i = 0; 
+/* FUNCTION TO CONVERT MINUTES  AND SECUNDS TO MILISECONDS */
 
-const moveBar = function () {
+
+
+const convertToMilis = function (indexOfTheSong) {
+    let minutes = parseInt(playlist[indexOfTheSong].duration.split(":")[0]);
+    let seconds = parseInt(playlist[indexOfTheSong].duration.split(":")[1]);
+
+    return minutes * 60000 + seconds * 1000; 
+}
+
+/* CHANGE TIMES */
+
+ function getTimeRemaining(endtime) {
+   const total = Date.parse(endtime) - Date.parse(new Date());
+   const seconds = Math.floor((total / 1000) % 60);
+   const minutes = Math.floor((total / 1000 / 60) % 60);
+   const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+   const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+   return {
+     total,
+     days,
+     hours,
+     minutes,
+     seconds,
+   };
+ }
+
+ function initializeClock(id, endtime) {
+   const clock = document.getElementById(id);
+   function updateClock() {
+     const t = getTimeRemaining(endtime);
+     
+     clock.innerHTML =
+       (t.minutes) + ":" + ("0" + t.seconds).slice(-2);
+     if (t.total <= 0) {
+       clearInterval(timeinterval);
+     }
+   }
+
+   updateClock(); // run function once at first to avoid delay
+   let timeinterval = setInterval(updateClock, 1000);
+ }
+
+function countTimeUp (id, endtime, play) {
+    const clock = document.getElementById(id);
+    const timeInSecs = endtime;
+    let secCounter = 0;
+    function updateTimer() {        
+      clock.innerHTML = Math.floor(secCounter / 60) + ":" + ("0" + secCounter).slice(-2);
+      secCounter++;
+      endtime--;
+
+      if (endtime <0 ) {
+        clearInterval(timeinterval);
+      }
+    }
+
+    if (play) {
+        updateTimer(); // run function once at first to avoid delay
+        let timeinterval = setInterval(updateTimer, 1000);
+    }
+} 
+
+
+/* CHANGE TIMES END */
+
+/* JS FOR PROGRESS BAR */
+
+const moveBar = function () {    
    
-   
+    let i = 0; 
+    let duration = convertToMilis(songInThePlayerIndex);
+    let step = 1;
     if (i == 0) {
         i = 1;
-        let elem = document.getElementById("myBar");
-        console.log(elem);
+        let elem = document.getElementById("myBar");        
         let width = 1;
-        let id = setInterval(frame, 100);
+        let id = setInterval(frame, 1000);
             function frame() {
             if (width >= 100) {
-                clearInterval(id);
-                i = 0;
+              clearInterval(id);
+              i = 0;
             } else {
-                width++;
-                elem.style.width = width + "%";
+              width+=step;
+              
+              elem.style.width = width + "%";
             }
             }
   }
 };
 
-const stopBar = function () {
-    i = 1;
-    console.log(i)
+
+const playSong = function () {
+  playBtnContainer.classList.add("play");
+  playBtnIconsFooter[0].classList.add("d-none");
+  playBtnIconsFooter[1].classList.remove("d-none");
+  playBtnIconsMain[0].classList.add("d-none");
+  playBtnIconsMain[1].classList.remove("d-none");
+  playBtnIconsNav[0].classList.add("d-none");
+  playBtnIconsNav[1].classList.remove("d-none");
+  moveBar();
+
+  /* THIS STARTS COUNTING DOWN THE CLOCK */
+  durationContainer.innerText = " ";
+  let timeInMinutes = convertToMilis(songInThePlayerIndex) / 60000;
+  let timeInSeconds = convertToMilis(songInThePlayerIndex) / 1000;
+  const currentTime = Date.parse(new Date());
+  const deadline = new Date(currentTime + timeInMinutes * 60 * 1000);
+  
+  initializeClock("timer-end", deadline);
+  /* THIS STARTS COUNTING DOWN THE CLOCK END */
+  /* THIS STARTS COUNTING UP THE CLOCK */
+  timerStart.innerText = " ";
+  countTimeUp("timer-start", timeInSeconds ,true);
+  /* THIS STARTS COUNTING UP THE CLOCK END */
 }
 
-const btnPlay = document.getElementById("button-play");
+const pauseSong = function () {
+    playBtnContainer.classList.remove("play");
+    playBtnIconsFooter[0].classList.remove("d-none");
+    playBtnIconsFooter[1].classList.add("d-none");
+    playBtnIconsMain[0].classList.remove("d-none");
+    playBtnIconsMain[1].classList.add("d-none");
+    playBtnIconsNav[0].classList.remove("d-none");
+    playBtnIconsNav[1].classList.add("d-none");
 
 
-
-
-
-window.onload = function () {
-  loadPlayList();
-  recentCardDisplay();
-  toTryCardDisplay();
+    
 };
+
+/* EVENT LISTENERS FOR PLAYING SONG */
+playBtnContainer.addEventListener("click", () =>{
+    const isPlaying = playBtnContainer.classList.contains("play");
+
+    if (isPlaying) {
+        pauseSong();
+    } else {
+        playSong();
+    }
+
+} );
+
+
+
+
+
+
 
 /* JS FOR PROGRESS BAR END  */
 
 
 
 /* MOVE BAR END */
+
+window.onload = function () {
+  loadPlayList();
+  recentCardDisplay();
+  toTryCardDisplay();
+};

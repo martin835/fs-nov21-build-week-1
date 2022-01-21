@@ -596,6 +596,11 @@ a:hover{
     cursor: pointer;
 }
 
+.footer-play-button-wrapper:hover {
+  cursor: pointer;
+}
+
+
 /* .artist-songs-table-wrapper > .row button {
     background: transparent;
     border: none;
