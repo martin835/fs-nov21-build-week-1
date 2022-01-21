@@ -346,10 +346,18 @@ const loadPlayList = function () {
 
 /* PLAYER GLOBAL VARIABLES */
 const playBtnContainer = document.getElementById("button-play");
+const playBtnContainerMain = document.getElementById("artist-main-play-button");
+const playBtnContainerNav = document.getElementById("artist-nav-play-button");
 const playImage = document.getElementById("play-image");
 const playingSong = document.getElementById("play-song");
 const playBand = document.getElementById("play-band");
-const playBtnIcons  = document.querySelectorAll("#button-play > i");
+const playBtnIconsFooter  = document.querySelectorAll("#button-play > i");
+const playBtnIconsMain = document.querySelectorAll(
+  "#artist-main-play-button > i"
+);
+const playBtnIconsNav = document.querySelectorAll(
+  "#artist-nav-play-button > i"
+);
 const durationContainer = document.getElementById("timer-end");
 const timerStart = document.getElementById("timer-start");
 let songInThePlayerIndex = 0; 
@@ -380,7 +388,60 @@ const convertToMilis = function (indexOfTheSong) {
     return minutes * 60000 + seconds * 1000; 
 }
 
+/* CHANGE TIMES */
 
+ function getTimeRemaining(endtime) {
+   const total = Date.parse(endtime) - Date.parse(new Date());
+   const seconds = Math.floor((total / 1000) % 60);
+   const minutes = Math.floor((total / 1000 / 60) % 60);
+   const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+   const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+   return {
+     total,
+     days,
+     hours,
+     minutes,
+     seconds,
+   };
+ }
+
+ function initializeClock(id, endtime) {
+   const clock = document.getElementById(id);
+   function updateClock() {
+     const t = getTimeRemaining(endtime);
+     
+     clock.innerHTML =
+       (t.minutes) + ":" + ("0" + t.seconds).slice(-2);
+     if (t.total <= 0) {
+       clearInterval(timeinterval);
+     }
+   }
+
+   updateClock(); // run function once at first to avoid delay
+   let timeinterval = setInterval(updateClock, 1000);
+ }
+
+function countTimeUp (id, endtime) {
+    const clock = document.getElementById(id);
+    const timeInSecs = endtime;
+    let secCounter = 0;
+    function updateTimer() {        
+      clock.innerHTML = Math.floor(secCounter / 60) + ":" + ("0" + secCounter).slice(-2);
+      secCounter++;
+      endtime--;
+
+      if (endtime <0 ) {
+        clearInterval(timeinterval);
+      }
+    }
+
+    updateTimer(); // run function once at first to avoid delay
+    let timeinterval = setInterval(updateTimer, 1000);
+} 
+
+
+/* CHANGE TIMES END */
 
 /* JS FOR PROGRESS BAR */
 
@@ -388,7 +449,7 @@ const moveBar = function () {
    
     let i = 0; 
     let duration = convertToMilis(songInThePlayerIndex);
-    let step = 10;
+    let step = 1;
     if (i == 0) {
         i = 1;
         let elem = document.getElementById("myBar");        
@@ -400,7 +461,7 @@ const moveBar = function () {
               i = 0;
             } else {
               width+=step;
-              console.log(width);
+              
               elem.style.width = width + "%";
             }
             }
@@ -409,16 +470,38 @@ const moveBar = function () {
 
 
 const playSong = function () {
-    playBtnContainer.classList.add("play");
-    playBtnIcons[0].classList.add("d-none");
-    playBtnIcons[1].classList.remove("d-none");
-    moveBar();
+  playBtnContainer.classList.add("play");
+  playBtnIconsFooter[0].classList.add("d-none");
+  playBtnIconsFooter[1].classList.remove("d-none");
+  playBtnIconsMain[0].classList.add("d-none");
+  playBtnIconsMain[1].classList.remove("d-none");
+  playBtnIconsNav[0].classList.add("d-none");
+  playBtnIconsNav[1].classList.remove("d-none");
+  moveBar();
+
+  /* THIS STARTS COUNTING DOWN THE CLOCK */
+  durationContainer.innerText = " ";
+  let timeInMinutes = convertToMilis(songInThePlayerIndex) / 60000;
+  let timeInSeconds = convertToMilis(songInThePlayerIndex) / 1000;
+  const currentTime = Date.parse(new Date());
+  const deadline = new Date(currentTime + timeInMinutes * 60 * 1000);
+  
+  initializeClock("timer-end", deadline);
+  /* THIS STARTS COUNTING DOWN THE CLOCK END */
+  /* THIS STARTS COUNTING UP THE CLOCK */
+  timerStart.innerText = " ";
+  countTimeUp("timer-start", timeInSeconds);
+  /* THIS STARTS COUNTING UP THE CLOCK END */
 }
 
 const pauseSong = function () {
     playBtnContainer.classList.remove("play");
-    playBtnIcons[0].classList.remove("d-none");
-    playBtnIcons[1].classList.add("d-none");
+    playBtnIconsFooter[0].classList.remove("d-none");
+    playBtnIconsFooter[1].classList.add("d-none");
+    playBtnIconsMain[0].classList.remove("d-none");
+    playBtnIconsMain[1].classList.add("d-none");
+    playBtnIconsNav[0].classList.remove("d-none");
+    playBtnIconsNav[1].classList.add("d-none");
 };
 
 /* EVENT LISTENERS FOR PLAYING SONG */
