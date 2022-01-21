@@ -42,7 +42,7 @@ body {
 }
 .small-card-image-main{
     width: 6em;
-    height: 100%;
+    height: 6em;
     object-fit: cover;
     padding:0;
     border-radius: 2px;
@@ -62,6 +62,7 @@ body {
     border-radius: 2px;
     opacity: 1;
     overflow: hidden;
+    
     
 }
 
@@ -122,12 +123,13 @@ div.card-main:hover .son2{
 
 div.small-card-main:hover {
     background-color: #8d8a8a63;
+    
 }
 
 
 div.card-main:hover{
     opacity: 0.8;
-    background-color: #8d8a8a63 ;  
+    background-color: #8d8a8a63 ; 
 }
 .imagewrapper{
     position: relative;
@@ -156,7 +158,13 @@ div.card-main:hover{
     opacity: 1;
     margin-bottom: 0.5em;
     margin-right: 0.5em;
+
+    transition: font-size 0.2s ease-in;
     
+}
+
+.playbutton:hover{
+    font-size: 1.5em;
 }
 
 a:hover{
