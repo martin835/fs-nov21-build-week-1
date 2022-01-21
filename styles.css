@@ -563,3 +563,36 @@ a:hover{
 }
 
 /* End of Gbemi's Album code*/
+
+/* STYLES FOR PROGRESS BAR */
+
+#myProgress {
+  width: 90%;
+  background-color: grey;
+  border-radius: 2px;
+}
+
+#myBar {
+  width: 1%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--spotify-green);
+}
+
+.footer-timers {
+    font-size: 0.8rem;
+}
+
+.artist-songs-table-wrapper > .row .bi-play-fill:hover {
+    cursor: pointer;
+}
+
+/* .artist-songs-table-wrapper > .row button {
+    background: transparent;
+    border: none;
+    width: 10px;
+    color: var(--white-1);
+    margin-right: 1rem;
+
+} */
+  /* STYLES FOR PROGRESS BAR END */
