@@ -552,7 +552,51 @@ playBtnContainer.addEventListener("click", () =>{
 
 
 /* JS FOR RETRIEVING DATA FROM RAPID APIs*/
+const getAlbumsFromApi = function (data) {   
+    let myArr = data.data;
+    console.log(myArr);
+    //console.log(myArr[0].album.title);
+    const albumModalContainer = document.getElementById("display-ablums-modal");    
+    const modalLabelContainer = document.getElementById("albumModalLabel");
+    modalLabelContainer.innerText = `${myArr[0].artist.name}'s albums`;
+    
+    for (i = 0; i < myArr.length; i++) {
+      let newDivforAlbumName = document.createElement("div");
+      newDivforAlbumName.innerText = myArr[i].album.title;
+      albumModalContainer.appendChild(newDivforAlbumName);           
+    }
+}
 
+const getAlbumIdsIntoArray = function (data) {
+     let myArr = data.data; 
+     let albumIds = [];
+     for (i = 0; i < myArr.length; i++) {
+        albumIds.push(myArr[i].album.id);
+     }
+
+     return albumIds;
+}
+
+const logUniqueAlbumsAfterClicking = function (data) {
+    const buttonInModalConsoleLoggingNumberOfUniqueAlbums =
+      document.getElementById("console-log-unique-albums-from-api");
+    buttonInModalConsoleLoggingNumberOfUniqueAlbums.addEventListener(
+      "click",
+      function () {
+        let albumIds = getAlbumIdsIntoArray(data);
+        let uniqueAlbumIds = [];
+        for (i = 0; i < albumIds.length; i++) {
+          if (
+            uniqueAlbumIds.indexOf(albumIds[i]) === -1 &&
+            albumIds[i] !== ""
+          ) {
+            uniqueAlbumIds.push(albumIds[i]);
+          }
+        }
+        console.log("Number of unique albums is: " + uniqueAlbumIds.length);
+      }
+    );
+};
 
 const fetchEminem = () => {
     fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem", {
@@ -565,34 +609,9 @@ const fetchEminem = () => {
       .then((response) => {
         return response.json();
       })
-      .then((data) => {
-        let myArr = data.data;
-        console.log(myArr);
-        console.log(myArr[0].album.title);
-        const albumModalContainer = document.getElementById(
-          "display-ablums-modal"
-        );
-
-        let albumIds = [];
-
-        for (i = 0; i < myArr.length; i++) {
-          let newDiv = document.createElement("div");
-          newDiv.innerText = myArr[i].album.title;
-          albumModalContainer.appendChild(newDiv);
-          albumIds.push(myArr[i].album.id);
-        }
-
-        console.log(albumIds);
-        
-        let uniqueAlbumIds = [];
-        for (i=0; i < albumIds.length; i++) {
-            if (uniqueAlbumIds.indexOf(albumIds[i]) === -1 && albumIds[i] !== "") {
-              uniqueAlbumIds.push(albumIds[i]);
-            }
-        }
-        console.log(uniqueAlbumIds);
-
-
+      .then((data) => {              
+        getAlbumsFromApi(data);                
+        logUniqueAlbumsAfterClicking(data);
       })
       .catch((err) => {
         console.error(err);
@@ -609,6 +628,5 @@ window.onload = function () {
   loadPlayList();
   recentCardDisplay();
   toTryCardDisplay();
-  fetchEminem();
-  
+  fetchEminem();  
 };
