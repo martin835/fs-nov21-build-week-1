@@ -261,7 +261,7 @@ const observerNav = new IntersectionObserver(function (entries, observer) {
     entries.forEach(entry => {
         /* console.log(entry);
         console.log(entry.target); */
-        console.log(entry.isIntersecting);
+        //console.log(entry.isIntersecting);
        
         if (!entry.isIntersecting) {
           buttonsToChange[0].classList.remove("d-none");
@@ -548,19 +548,67 @@ playBtnContainer.addEventListener("click", () =>{
 } );
 
 
-
-
-
-
-
 /* JS FOR PROGRESS BAR END  */
 
 
+/* JS FOR RETRIEVING DATA FROM RAPID APIs*/
 
-/* MOVE BAR END */
+
+const fetchEminem = () => {
+    fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem", {
+      method: "GET"
+      /* headers: {
+        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+        "x-rapidapi-key": "9e0e57a40bmsh0d053aca0434d4ep18e16djsnadbc0988cda9",
+      }, */
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let myArr = data.data;
+        console.log(myArr);
+        console.log(myArr[0].album.title);
+        const albumModalContainer = document.getElementById(
+          "display-ablums-modal"
+        );
+
+        let albumIds = [];
+
+        for (i = 0; i < myArr.length; i++) {
+          let newDiv = document.createElement("div");
+          newDiv.innerText = myArr[i].album.title;
+          albumModalContainer.appendChild(newDiv);
+          albumIds.push(myArr[i].album.id);
+        }
+
+        console.log(albumIds);
+        
+        let uniqueAlbumIds = [];
+        for (i=0; i < albumIds.length; i++) {
+            if (uniqueAlbumIds.indexOf(albumIds[i]) === -1 && albumIds[i] !== "") {
+              uniqueAlbumIds.push(albumIds[i]);
+            }
+        }
+        console.log(uniqueAlbumIds);
+
+
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+} 
+
+
+/* JS FOR RETRIEVING DATA FROM RAPID APIs END*/
+
+
+
 
 window.onload = function () {
   loadPlayList();
   recentCardDisplay();
   toTryCardDisplay();
+  fetchEminem();
+  
 };
